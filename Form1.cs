@@ -27,7 +27,7 @@ namespace Battleship
             InitializeComponent();
             loadButtons();
             
-            a1.Enabled = false; a2.Enabled = false; a3.Enabled = false; a4.Enabled = false;
+            //a1.Enabled = false; a2.Enabled = false; a3.Enabled = false; a4.Enabled = false;
             b1.Enabled = false; b2.Enabled = false; b3.Enabled = false; b4.Enabled = false;
             c1.Enabled = false; c2.Enabled = false; c3.Enabled = false; c4.Enabled = false;
             d1.Enabled = false; d2.Enabled = false; d3.Enabled = false; d4.Enabled = false;
