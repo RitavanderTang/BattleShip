@@ -68,7 +68,7 @@
             this.a3 = new System.Windows.Forms.Button();
             this.a2 = new System.Windows.Forms.Button();
             this.enemyPlayTimer = new System.Windows.Forms.Timer(this.components);
-            this.enemyPositionPicker = new System.Windows.Forms.Timer(this.components);
+            this.player2PositionPicker = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -127,13 +127,13 @@
             this.helpText.ForeColor = System.Drawing.Color.Transparent;
             this.helpText.Location = new System.Drawing.Point(95, 543);
             this.helpText.Name = "helpText";
-            this.helpText.Size = new System.Drawing.Size(373, 15);
+            this.helpText.Size = new System.Drawing.Size(223, 15);
             this.helpText.TabIndex = 4;
-            this.helpText.Text = "1) Click on 3 Different Buttons Above to Place Your Ships.";
+            this.helpText.Text = "Player 1: Time to place your ships";
             // 
             // w1
             // 
-            this.w1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.w1.BackColor = System.Drawing.SystemColors.Control;
             this.w1.Location = new System.Drawing.Point(107, 228);
             this.w1.Name = "w1";
             this.w1.Size = new System.Drawing.Size(75, 55);
@@ -301,7 +301,7 @@
             this.a1.TabIndex = 23;
             this.a1.Text = "A1";
             this.a1.UseVisualStyleBackColor = true;
-            this.a1.Click += new System.EventHandler(this.attackEnemyPosition);
+            this.a1.Click += new System.EventHandler(this.attackplayer2Position);
             // 
             // b1
             // 
@@ -311,7 +311,7 @@
             this.b1.TabIndex = 24;
             this.b1.Text = "B1";
             this.b1.UseVisualStyleBackColor = true;
-            this.b1.Click += new System.EventHandler(this.attackEnemyPosition);
+            this.b1.Click += new System.EventHandler(this.attackplayer2Position);
             // 
             // d4
             // 
@@ -321,7 +321,7 @@
             this.d4.TabIndex = 25;
             this.d4.Text = "D4";
             this.d4.UseVisualStyleBackColor = true;
-            this.d4.Click += new System.EventHandler(this.attackEnemyPosition);
+            this.d4.Click += new System.EventHandler(this.attackplayer2Position);
             // 
             // d3
             // 
@@ -331,7 +331,7 @@
             this.d3.TabIndex = 26;
             this.d3.Text = "D3";
             this.d3.UseVisualStyleBackColor = true;
-            this.d3.Click += new System.EventHandler(this.attackEnemyPosition);
+            this.d3.Click += new System.EventHandler(this.attackplayer2Position);
             // 
             // d2
             // 
@@ -341,7 +341,7 @@
             this.d2.TabIndex = 27;
             this.d2.Text = "D2";
             this.d2.UseVisualStyleBackColor = true;
-            this.d2.Click += new System.EventHandler(this.attackEnemyPosition);
+            this.d2.Click += new System.EventHandler(this.attackplayer2Position);
             // 
             // d1
             // 
@@ -351,7 +351,7 @@
             this.d1.TabIndex = 28;
             this.d1.Text = "D1";
             this.d1.UseVisualStyleBackColor = true;
-            this.d1.Click += new System.EventHandler(this.attackEnemyPosition);
+            this.d1.Click += new System.EventHandler(this.attackplayer2Position);
             // 
             // c4
             // 
@@ -361,7 +361,7 @@
             this.c4.TabIndex = 29;
             this.c4.Text = "C4";
             this.c4.UseVisualStyleBackColor = true;
-            this.c4.Click += new System.EventHandler(this.attackEnemyPosition);
+            this.c4.Click += new System.EventHandler(this.attackplayer2Position);
             // 
             // c3
             // 
@@ -371,7 +371,7 @@
             this.c3.TabIndex = 30;
             this.c3.Text = "C3";
             this.c3.UseVisualStyleBackColor = true;
-            this.c3.Click += new System.EventHandler(this.attackEnemyPosition);
+            this.c3.Click += new System.EventHandler(this.attackplayer2Position);
             // 
             // c2
             // 
@@ -381,7 +381,7 @@
             this.c2.TabIndex = 31;
             this.c2.Text = "C2";
             this.c2.UseVisualStyleBackColor = true;
-            this.c2.Click += new System.EventHandler(this.attackEnemyPosition);
+            this.c2.Click += new System.EventHandler(this.attackplayer2Position);
             // 
             // c1
             // 
@@ -391,7 +391,7 @@
             this.c1.TabIndex = 32;
             this.c1.Text = "C1";
             this.c1.UseVisualStyleBackColor = true;
-            this.c1.Click += new System.EventHandler(this.attackEnemyPosition);
+            this.c1.Click += new System.EventHandler(this.attackplayer2Position);
             // 
             // b4
             // 
@@ -401,7 +401,7 @@
             this.b4.TabIndex = 33;
             this.b4.Text = "B4";
             this.b4.UseVisualStyleBackColor = true;
-            this.b4.Click += new System.EventHandler(this.attackEnemyPosition);
+            this.b4.Click += new System.EventHandler(this.attackplayer2Position);
             // 
             // b3
             // 
@@ -411,7 +411,7 @@
             this.b3.TabIndex = 34;
             this.b3.Text = "B3";
             this.b3.UseVisualStyleBackColor = true;
-            this.b3.Click += new System.EventHandler(this.attackEnemyPosition);
+            this.b3.Click += new System.EventHandler(this.attackplayer2Position);
             // 
             // b2
             // 
@@ -421,7 +421,7 @@
             this.b2.TabIndex = 35;
             this.b2.Text = "B2";
             this.b2.UseVisualStyleBackColor = true;
-            this.b2.Click += new System.EventHandler(this.attackEnemyPosition);
+            this.b2.Click += new System.EventHandler(this.attackplayer2Position);
             // 
             // a4
             // 
@@ -431,7 +431,7 @@
             this.a4.TabIndex = 36;
             this.a4.Text = "A4";
             this.a4.UseVisualStyleBackColor = true;
-            this.a4.Click += new System.EventHandler(this.attackEnemyPosition);
+            this.a4.Click += new System.EventHandler(this.attackplayer2Position);
             // 
             // a3
             // 
@@ -441,7 +441,7 @@
             this.a3.TabIndex = 37;
             this.a3.Text = "A3";
             this.a3.UseVisualStyleBackColor = true;
-            this.a3.Click += new System.EventHandler(this.attackEnemyPosition);
+            this.a3.Click += new System.EventHandler(this.attackplayer2Position);
             // 
             // a2
             // 
@@ -451,18 +451,18 @@
             this.a2.TabIndex = 38;
             this.a2.Text = "A2";
             this.a2.UseVisualStyleBackColor = true;
-            this.a2.Click += new System.EventHandler(this.attackEnemyPosition);
+            this.a2.Click += new System.EventHandler(this.attackplayer2Position);
             // 
             // enemyPlayTimer
             // 
             this.enemyPlayTimer.Interval = 1000;
             this.enemyPlayTimer.Tick += new System.EventHandler(this.enemyAttackPlayer);
             // 
-            // enemyPositionPicker
+            // player2PositionPicker
             // 
-            this.enemyPositionPicker.Enabled = true;
-            this.enemyPositionPicker.Interval = 500;
-            this.enemyPositionPicker.Tick += new System.EventHandler(this.enemyPicksPositions);
+            this.player2PositionPicker.Enabled = true;
+            this.player2PositionPicker.Interval = 500;
+            this.player2PositionPicker.Tick += new System.EventHandler(this.enemyPicksPositions);
             // 
             // label1
             // 
@@ -607,7 +607,7 @@
         private System.Windows.Forms.Button a3;
         private System.Windows.Forms.Button a2;
         private System.Windows.Forms.Timer enemyPlayTimer;
-        private System.Windows.Forms.Timer enemyPositionPicker;
+        private System.Windows.Forms.Timer player2PositionPicker;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

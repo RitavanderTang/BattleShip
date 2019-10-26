@@ -15,8 +15,8 @@ namespace Battleship
    
     public partial class Form1 : Form
     {
-        List<Button> playerPosition;
-        List<Button> enemyPosition;
+        List<Button> player1Position;
+        List<Button> player2Position;
         Random rand = new Random();
         int totalShips = 3;
         int totalEnemy = 3;
@@ -27,12 +27,11 @@ namespace Battleship
         {
             InitializeComponent();
             loadButtons();
-            
-            a1.Enabled = false; a2.Enabled = false; a3.Enabled = false; a4.Enabled = false;
-            b1.Enabled = false; b2.Enabled = false; b3.Enabled = false; b4.Enabled = false;
-            c1.Enabled = false; c2.Enabled = false; c3.Enabled = false; c4.Enabled = false;
-            d1.Enabled = false; d2.Enabled = false; d3.Enabled = false; d4.Enabled = false;
 
+            for (int i = 0; i < 16; i++)
+            {
+                player2Position[i].Enabled = false;
+            }
         }
 
         private void playerPicksPosition(object sender, EventArgs e)
@@ -50,95 +49,92 @@ namespace Battleship
             if (totalShips == 0)
             {
                 
-                helpText.Top = 71;
-                helpText.Left = 150;
-                helpText.Text = "2) Now attack your enemy by clicking an enemy location";
-                a1.Enabled = true; a2.Enabled = true; a3.Enabled = true; a4.Enabled = true;
-                b1.Enabled = true; b2.Enabled = true; b3.Enabled = true; b4.Enabled = true;
-                c1.Enabled = true; c2.Enabled = true; c3.Enabled = true; c4.Enabled = true;
-                d1.Enabled = true; d2.Enabled = true; d3.Enabled = true; d4.Enabled = true;
+                helpText.Top = 534;
+                helpText.Left = 610;
+                helpText.Text = "Now attack your enemy by clicking an enemy location";
+
+                for (int i = 0; i < 16; i++)
+                {
+                    player2Position[i].Enabled = true;
+                }
             }
 
 
         }
 
-        public void attackEnemyPosition(object sender, EventArgs e)
+        public void attackplayer2Position(object sender, EventArgs e)
         {
             var button = sender as Button;
-            int index = enemyPosition.IndexOf(button);
+            int index = player2Position.IndexOf(button);
 
             
 
-            if ( enemyPosition[index].Enabled && rounds > 0)
+            if ( player2Position[index].Enabled && rounds > 0)
+            {
+                rounds--;
+                roundsText.Text = "Rounds: " + rounds;
+
+                if (player2Position[index].Tag == "enemyShip")
                 {
-                    rounds--;
-                    roundsText.Text = "Rounds: " + rounds;
+                    player2Position[index].Enabled = false;
+                    player2Position[index].BackgroundImage = Properties.Resources.fireIcon;
+                    player2Position[index].BackColor = System.Drawing.Color.DarkBlue;
+                    playerTotalScore++;
+                    playerScore.Text = "" + playerTotalScore;
+                    enemyPlayTimer.Start();
+                }
+                else
+                {
+                    player2Position[index].Enabled = false;
+                    player2Position[index].BackgroundImage = Properties.Resources.missIcon;
+                    player2Position[index].BackColor = System.Drawing.Color.DarkBlue;
+                    enemyPlayTimer.Start();
+                }
 
-                    if (enemyPosition[index].Tag == "enemyShip")
-                    {
-                        enemyPosition[index].Enabled = false;
-                        enemyPosition[index].BackgroundImage = Properties.Resources.fireIcon;
-                        enemyPosition[index].BackColor = System.Drawing.Color.DarkBlue;
-                        playerTotalScore++;
-                        playerScore.Text = "" + playerTotalScore;
-                        enemyPlayTimer.Start();
-                    }
-                    else
-                    {
-                        enemyPosition[index].Enabled = false;
-                        enemyPosition[index].BackgroundImage = Properties.Resources.missIcon;
-                        enemyPosition[index].BackColor = System.Drawing.Color.DarkBlue;
-                        enemyPlayTimer.Start();
-                    }
-
-                    a1.Enabled = false; a2.Enabled = false; a3.Enabled = false; a4.Enabled = false;
-                    b1.Enabled = false; b2.Enabled = false; b3.Enabled = false; b4.Enabled = false;
-                    c1.Enabled = false; c2.Enabled = false; c3.Enabled = false; c4.Enabled = false;
-                    d1.Enabled = false; d2.Enabled = false; d3.Enabled = false; d4.Enabled = false;    
-                 }
-            
-
+                for (int i = 0; i < 16; i++)
+                {   
+                    player2Position[i].Enabled = false;
+                }
+            }
         }
 
         private void enemyAttackPlayer(object sender, EventArgs e)
         {
-            if (playerPosition.Count > 0 && rounds > 0)
+            if (player1Position.Count > 0 && rounds > 0)
             {
                 
-
                 rounds--;
                 roundsText.Text = "Rounds: " + rounds;
 
-                int index = rand.Next(playerPosition.Count);
+                int index = rand.Next(player1Position.Count);
 
-                if (playerPosition[index].Tag == "playerShip")
+                if (player1Position[index].Tag == "playerShip")
                 {
-                    playerPosition[index].BackgroundImage = Properties.Resources.fireIcon;
-
-                    //enemyMoves.Text = "" + playerPosition[index].Text;
-                    playerPosition[index].Enabled = false;
-                    playerPosition[index].BackColor = System.Drawing.Color.DarkBlue;
-                    playerPosition.RemoveAt(index);
+                    player1Position[index].BackgroundImage = Properties.Resources.fireIcon;
+                    player1Position[index].Enabled = false;
+                    player1Position[index].BackColor = System.Drawing.Color.DarkBlue;
+                    player1Position.RemoveAt(index);
                     enemyTotalScore++;
                     enemyScore.Text = "" + enemyTotalScore;
                     enemyPlayTimer.Stop();
                 }
                 else
                 {
-                    playerPosition[index].BackgroundImage = Properties.Resources.missIcon;
-                    //enemyMoves.Text = "" + playerPosition[index].Text;
-                    playerPosition[index].Enabled = false;
-                    playerPosition[index].BackColor = System.Drawing.Color.DarkBlue;
-                    playerPosition.RemoveAt(index);
+                    player1Position[index].BackgroundImage = Properties.Resources.missIcon;
+                    //enemyMoves.Text = "" + player1Position[index].Text;
+                    player1Position[index].Enabled = false;
+                    player1Position[index].BackColor = System.Drawing.Color.DarkBlue;
+                    player1Position.RemoveAt(index);
                     enemyPlayTimer.Stop();
                 }
 
-                a1.Enabled = true; a2.Enabled = true; a3.Enabled = true; a4.Enabled = true;
-                b1.Enabled = true; b2.Enabled = true; b3.Enabled = true; b4.Enabled = true;
-                c1.Enabled = true; c2.Enabled = true; c3.Enabled = true; c4.Enabled = true;
-                d1.Enabled = true; d2.Enabled = true; d3.Enabled = true; d4.Enabled = true;
 
+                for (int i = 0; i < 16; i++)
+                {
+                    player2Position[i].Enabled = true;
+                }
             }
+
             if (rounds < 1 || playerTotalScore > 2 || enemyTotalScore > 2)
             {
                 if (playerTotalScore > enemyTotalScore)
@@ -158,35 +154,35 @@ namespace Battleship
 
         private void enemyPicksPositions(object sender, EventArgs e)
         {
-            int index = rand.Next(enemyPosition.Count);
+            int index = rand.Next(player2Position.Count);
 
-            if (enemyPosition[index].Enabled == true && enemyPosition[index].Tag == null)
+            if (player2Position[index].Enabled == true && player2Position[index].Tag == null)
             {
-                enemyPosition[index].Tag = "enemyShip";
+                player2Position[index].Tag = "enemyShip";
                 totalEnemy--;
 
-                Debug.WriteLine("Enemy Position  " + enemyPosition[index].Text);
+                Debug.WriteLine("Enemy Position  " + player2Position[index].Text);
             }
             else
             {
-                index = rand.Next(enemyPosition.Count);
+                index = rand.Next(player2Position.Count);
             }
 
             if (totalEnemy < 1)
             {
                 
-                enemyPositionPicker.Stop();
+                player2PositionPicker.Stop();
             }
         }
 
         private void loadButtons()
         {
-            playerPosition = new List<Button> { w1, w2, w3, w4, x1, x2, x3, x4, y1, y2, y3, y4, z1, z2, z3, z4 };
-            enemyPosition = new List<Button> { a1, a2, a3, a4, b1, b2, b3, b4, c1, c2, c3, c4, d1, d2, d3, d4 };
+            player1Position = new List<Button> { w1, w2, w3, w4, x1, x2, x3, x4, y1, y2, y3, y4, z1, z2, z3, z4 };
+            player2Position = new List<Button> { a1, a2, a3, a4, b1, b2, b3, b4, c1, c2, c3, c4, d1, d2, d3, d4 };
 
-            for (int i = 0; i < enemyPosition.Count; i++)
+            for (int i = 0; i < player2Position.Count; i++)
             {
-                enemyPosition[i].Tag = null;
+                player2Position[i].Tag = null;
                 
             }
         }

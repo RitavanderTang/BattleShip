@@ -120,6 +120,7 @@
     <None Include="radarbackground.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="battleshiphit.jpg" />
     <Content Include="MyTemplate.vstemplate" />
     <Content Include="__TemplateIcon.ico" />
   </ItemGroup>

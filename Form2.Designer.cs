@@ -28,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.enemyPositionPicker = new System.Windows.Forms.Timer(this.components);
-            this.enemyPlayTimer = new System.Windows.Forms.Timer(this.components);
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -67,21 +64,13 @@
             this.w2 = new System.Windows.Forms.Button();
             this.w3 = new System.Windows.Forms.Button();
             this.w1 = new System.Windows.Forms.Button();
-            this.helpText = new System.Windows.Forms.Label();
             this.roundsText = new System.Windows.Forms.Label();
-            this.enemyMoves = new System.Windows.Forms.Label();
             this.enemyScore = new System.Windows.Forms.Label();
             this.playerScore = new System.Windows.Forms.Label();
+            this.doneButton1 = new System.Windows.Forms.Button();
+            this.doneButton2 = new System.Windows.Forms.Button();
+            this.helpText = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // enemyPositionPicker
-            // 
-            this.enemyPositionPicker.Enabled = true;
-            this.enemyPositionPicker.Interval = 500;
-            // 
-            // enemyPlayTimer
-            // 
-            this.enemyPlayTimer.Interval = 1000;
             // 
             // label4
             // 
@@ -115,16 +104,16 @@
             this.label2.ForeColor = System.Drawing.Color.MediumSeaGreen;
             this.label2.Location = new System.Drawing.Point(857, 62);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(105, 25);
+            this.label2.Size = new System.Drawing.Size(91, 25);
             this.label2.TabIndex = 81;
-            this.label2.Text = "Computer";
+            this.label2.Text = "Player 2";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
-            this.label1.ForeColor = System.Drawing.Color.Cyan;
+            this.label1.ForeColor = System.Drawing.Color.MediumSeaGreen;
             this.label1.Location = new System.Drawing.Point(110, 67);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(91, 25);
@@ -139,6 +128,7 @@
             this.a2.TabIndex = 79;
             this.a2.Text = "A2";
             this.a2.UseVisualStyleBackColor = true;
+            this.a2.Click += new System.EventHandler(this.player2PicksPosition);
             // 
             // a3
             // 
@@ -148,6 +138,7 @@
             this.a3.TabIndex = 78;
             this.a3.Text = "A3";
             this.a3.UseVisualStyleBackColor = true;
+            this.a3.Click += new System.EventHandler(this.player2PicksPosition);
             // 
             // a4
             // 
@@ -157,6 +148,7 @@
             this.a4.TabIndex = 77;
             this.a4.Text = "A4";
             this.a4.UseVisualStyleBackColor = true;
+            this.a4.Click += new System.EventHandler(this.player2PicksPosition);
             // 
             // b2
             // 
@@ -166,6 +158,7 @@
             this.b2.TabIndex = 76;
             this.b2.Text = "B2";
             this.b2.UseVisualStyleBackColor = true;
+            this.b2.Click += new System.EventHandler(this.player2PicksPosition);
             // 
             // b3
             // 
@@ -175,6 +168,7 @@
             this.b3.TabIndex = 75;
             this.b3.Text = "B3";
             this.b3.UseVisualStyleBackColor = true;
+            this.b3.Click += new System.EventHandler(this.player2PicksPosition);
             // 
             // b4
             // 
@@ -184,6 +178,7 @@
             this.b4.TabIndex = 74;
             this.b4.Text = "B4";
             this.b4.UseVisualStyleBackColor = true;
+            this.b4.Click += new System.EventHandler(this.player2PicksPosition);
             // 
             // c1
             // 
@@ -193,6 +188,7 @@
             this.c1.TabIndex = 73;
             this.c1.Text = "C1";
             this.c1.UseVisualStyleBackColor = true;
+            this.c1.Click += new System.EventHandler(this.player2PicksPosition);
             // 
             // c2
             // 
@@ -202,6 +198,7 @@
             this.c2.TabIndex = 72;
             this.c2.Text = "C2";
             this.c2.UseVisualStyleBackColor = true;
+            this.c2.Click += new System.EventHandler(this.player2PicksPosition);
             // 
             // c3
             // 
@@ -211,6 +208,7 @@
             this.c3.TabIndex = 71;
             this.c3.Text = "C3";
             this.c3.UseVisualStyleBackColor = true;
+            this.c3.Click += new System.EventHandler(this.player2PicksPosition);
             // 
             // c4
             // 
@@ -220,6 +218,7 @@
             this.c4.TabIndex = 70;
             this.c4.Text = "C4";
             this.c4.UseVisualStyleBackColor = true;
+            this.c4.Click += new System.EventHandler(this.player2PicksPosition);
             // 
             // d1
             // 
@@ -229,6 +228,7 @@
             this.d1.TabIndex = 69;
             this.d1.Text = "D1";
             this.d1.UseVisualStyleBackColor = true;
+            this.d1.Click += new System.EventHandler(this.player2PicksPosition);
             // 
             // d2
             // 
@@ -238,6 +238,7 @@
             this.d2.TabIndex = 68;
             this.d2.Text = "D2";
             this.d2.UseVisualStyleBackColor = true;
+            this.d2.Click += new System.EventHandler(this.player2PicksPosition);
             // 
             // d3
             // 
@@ -247,6 +248,7 @@
             this.d3.TabIndex = 67;
             this.d3.Text = "D3";
             this.d3.UseVisualStyleBackColor = true;
+            this.d3.Click += new System.EventHandler(this.player2PicksPosition);
             // 
             // d4
             // 
@@ -256,6 +258,7 @@
             this.d4.TabIndex = 66;
             this.d4.Text = "D4";
             this.d4.UseVisualStyleBackColor = true;
+            this.d4.Click += new System.EventHandler(this.player2PicksPosition);
             // 
             // b1
             // 
@@ -265,6 +268,7 @@
             this.b1.TabIndex = 65;
             this.b1.Text = "B1";
             this.b1.UseVisualStyleBackColor = true;
+            this.b1.Click += new System.EventHandler(this.player2PicksPosition);
             // 
             // a1
             // 
@@ -274,6 +278,7 @@
             this.a1.TabIndex = 64;
             this.a1.Text = "A1";
             this.a1.UseVisualStyleBackColor = true;
+            this.a1.Click += new System.EventHandler(this.player2PicksPosition);
             // 
             // y4
             // 
@@ -283,7 +288,7 @@
             this.y4.TabIndex = 63;
             this.y4.Text = "Y4";
             this.y4.UseVisualStyleBackColor = true;
-            this.y4.Click += new System.EventHandler(this.playerPicksPosition);
+            this.y4.Click += new System.EventHandler(this.player1PicksPosition);
             // 
             // z1
             // 
@@ -293,7 +298,7 @@
             this.z1.TabIndex = 62;
             this.z1.Text = "Z1";
             this.z1.UseVisualStyleBackColor = true;
-            this.z1.Click += new System.EventHandler(this.playerPicksPosition);
+            this.z1.Click += new System.EventHandler(this.player1PicksPosition);
             // 
             // z2
             // 
@@ -303,7 +308,7 @@
             this.z2.TabIndex = 61;
             this.z2.Text = "Z2";
             this.z2.UseVisualStyleBackColor = true;
-            this.z2.Click += new System.EventHandler(this.playerPicksPosition);
+            this.z2.Click += new System.EventHandler(this.player1PicksPosition);
             // 
             // z3
             // 
@@ -313,7 +318,7 @@
             this.z3.TabIndex = 60;
             this.z3.Text = "Z3";
             this.z3.UseVisualStyleBackColor = true;
-            this.z3.Click += new System.EventHandler(this.playerPicksPosition);
+            this.z3.Click += new System.EventHandler(this.player1PicksPosition);
             // 
             // z4
             // 
@@ -323,7 +328,7 @@
             this.z4.TabIndex = 59;
             this.z4.Text = "Z4";
             this.z4.UseVisualStyleBackColor = true;
-            this.z4.Click += new System.EventHandler(this.playerPicksPosition);
+            this.z4.Click += new System.EventHandler(this.player1PicksPosition);
             // 
             // x1
             // 
@@ -333,7 +338,7 @@
             this.x1.TabIndex = 58;
             this.x1.Text = "X1";
             this.x1.UseVisualStyleBackColor = true;
-            this.x1.Click += new System.EventHandler(this.playerPicksPosition);
+            this.x1.Click += new System.EventHandler(this.player1PicksPosition);
             // 
             // x2
             // 
@@ -343,7 +348,7 @@
             this.x2.TabIndex = 57;
             this.x2.Text = "X2";
             this.x2.UseVisualStyleBackColor = true;
-            this.x2.Click += new System.EventHandler(this.playerPicksPosition);
+            this.x2.Click += new System.EventHandler(this.player1PicksPosition);
             // 
             // x3
             // 
@@ -353,7 +358,7 @@
             this.x3.TabIndex = 56;
             this.x3.Text = "X3";
             this.x3.UseVisualStyleBackColor = true;
-            this.x3.Click += new System.EventHandler(this.playerPicksPosition);
+            this.x3.Click += new System.EventHandler(this.player1PicksPosition);
             // 
             // x4
             // 
@@ -363,7 +368,7 @@
             this.x4.TabIndex = 55;
             this.x4.Text = "X4";
             this.x4.UseVisualStyleBackColor = true;
-            this.x4.Click += new System.EventHandler(this.playerPicksPosition);
+            this.x4.Click += new System.EventHandler(this.player1PicksPosition);
             // 
             // y1
             // 
@@ -373,7 +378,7 @@
             this.y1.TabIndex = 54;
             this.y1.Text = "Y1";
             this.y1.UseVisualStyleBackColor = true;
-            this.y1.Click += new System.EventHandler(this.playerPicksPosition);
+            this.y1.Click += new System.EventHandler(this.player1PicksPosition);
             // 
             // y2
             // 
@@ -383,7 +388,7 @@
             this.y2.TabIndex = 53;
             this.y2.Text = "Y2";
             this.y2.UseVisualStyleBackColor = true;
-            this.y2.Click += new System.EventHandler(this.playerPicksPosition);
+            this.y2.Click += new System.EventHandler(this.player1PicksPosition);
             // 
             // y3
             // 
@@ -393,7 +398,7 @@
             this.y3.TabIndex = 52;
             this.y3.Text = "Y3";
             this.y3.UseVisualStyleBackColor = true;
-            this.y3.Click += new System.EventHandler(this.playerPicksPosition);
+            this.y3.Click += new System.EventHandler(this.player1PicksPosition);
             // 
             // w4
             // 
@@ -404,7 +409,7 @@
             this.w4.TabIndex = 51;
             this.w4.Text = "W4";
             this.w4.UseVisualStyleBackColor = true;
-            this.w4.Click += new System.EventHandler(this.playerPicksPosition);
+            this.w4.Click += new System.EventHandler(this.player1PicksPosition);
             // 
             // w2
             // 
@@ -414,7 +419,7 @@
             this.w2.TabIndex = 50;
             this.w2.Text = "W2";
             this.w2.UseVisualStyleBackColor = true;
-            this.w2.Click += new System.EventHandler(this.playerPicksPosition);
+            this.w2.Click += new System.EventHandler(this.player1PicksPosition);
             // 
             // w3
             // 
@@ -424,30 +429,18 @@
             this.w3.TabIndex = 49;
             this.w3.Text = "W3";
             this.w3.UseVisualStyleBackColor = true;
-            this.w3.Click += new System.EventHandler(this.playerPicksPosition);
+            this.w3.Click += new System.EventHandler(this.player1PicksPosition);
             // 
             // w1
             // 
-            this.w1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.w1.BackColor = System.Drawing.SystemColors.Control;
             this.w1.Location = new System.Drawing.Point(115, 218);
             this.w1.Name = "w1";
             this.w1.Size = new System.Drawing.Size(75, 55);
             this.w1.TabIndex = 48;
             this.w1.Text = "W1";
             this.w1.UseVisualStyleBackColor = false;
-            this.w1.Click += new System.EventHandler(this.playerPicksPosition);
-            // 
-            // helpText
-            // 
-            this.helpText.AutoSize = true;
-            this.helpText.BackColor = System.Drawing.Color.Transparent;
-            this.helpText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.helpText.ForeColor = System.Drawing.Color.Transparent;
-            this.helpText.Location = new System.Drawing.Point(103, 533);
-            this.helpText.Name = "helpText";
-            this.helpText.Size = new System.Drawing.Size(373, 15);
-            this.helpText.TabIndex = 47;
-            this.helpText.Text = "1) Click on 3 Different Buttons Above to Place Your Ships.";
+            this.w1.Click += new System.EventHandler(this.player1PicksPosition);
             // 
             // roundsText
             // 
@@ -460,18 +453,6 @@
             this.roundsText.Size = new System.Drawing.Size(93, 26);
             this.roundsText.TabIndex = 46;
             this.roundsText.Text = "Rounds";
-            // 
-            // enemyMoves
-            // 
-            this.enemyMoves.AutoSize = true;
-            this.enemyMoves.BackColor = System.Drawing.Color.Transparent;
-            this.enemyMoves.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.enemyMoves.ForeColor = System.Drawing.Color.White;
-            this.enemyMoves.Location = new System.Drawing.Point(909, 36);
-            this.enemyMoves.Name = "enemyMoves";
-            this.enemyMoves.Size = new System.Drawing.Size(41, 26);
-            this.enemyMoves.TabIndex = 45;
-            this.enemyMoves.Text = "A1";
             // 
             // enemyScore
             // 
@@ -493,11 +474,47 @@
             this.playerScore.TabIndex = 43;
             this.playerScore.Text = "00";
             // 
+            // doneButton1
+            // 
+            this.doneButton1.Location = new System.Drawing.Point(394, 526);
+            this.doneButton1.Name = "doneButton1";
+            this.doneButton1.Size = new System.Drawing.Size(75, 23);
+            this.doneButton1.TabIndex = 84;
+            this.doneButton1.Text = "Done";
+            this.doneButton1.UseVisualStyleBackColor = true;
+            this.doneButton1.Click += new System.EventHandler(this.doneButton1_Click);
+            // 
+            // doneButton2
+            // 
+            this.doneButton2.Location = new System.Drawing.Point(887, 526);
+            this.doneButton2.Name = "doneButton2";
+            this.doneButton2.Size = new System.Drawing.Size(75, 23);
+            this.doneButton2.TabIndex = 85;
+            this.doneButton2.Text = "Done";
+            this.doneButton2.UseVisualStyleBackColor = true;
+            this.doneButton2.Click += new System.EventHandler(this.doneButton2_Click);
+            // 
+            // helpText
+            // 
+            this.helpText.AutoSize = true;
+            this.helpText.BackColor = System.Drawing.Color.Transparent;
+            this.helpText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.helpText.ForeColor = System.Drawing.Color.Transparent;
+            this.helpText.Location = new System.Drawing.Point(112, 534);
+            this.helpText.Name = "helpText";
+            this.helpText.Size = new System.Drawing.Size(223, 15);
+            this.helpText.TabIndex = 47;
+            this.helpText.Text = "Player 1: Time to place your ships";
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Battleship.Properties.Resources.radarbackground;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1065, 585);
+            this.Controls.Add(this.doneButton2);
+            this.Controls.Add(this.doneButton1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -536,7 +553,6 @@
             this.Controls.Add(this.w1);
             this.Controls.Add(this.helpText);
             this.Controls.Add(this.roundsText);
-            this.Controls.Add(this.enemyMoves);
             this.Controls.Add(this.enemyScore);
             this.Controls.Add(this.playerScore);
             this.Name = "Form2";
@@ -547,9 +563,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Timer enemyPositionPicker;
-        private System.Windows.Forms.Timer enemyPlayTimer;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
@@ -586,10 +599,11 @@
         private System.Windows.Forms.Button w2;
         private System.Windows.Forms.Button w3;
         private System.Windows.Forms.Button w1;
-        private System.Windows.Forms.Label helpText;
         private System.Windows.Forms.Label roundsText;
-        private System.Windows.Forms.Label enemyMoves;
         private System.Windows.Forms.Label enemyScore;
         private System.Windows.Forms.Label playerScore;
+        private System.Windows.Forms.Button doneButton1;
+        private System.Windows.Forms.Button doneButton2;
+        private System.Windows.Forms.Label helpText;
     }
 }
