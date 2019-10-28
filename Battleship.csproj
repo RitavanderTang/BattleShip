@@ -121,6 +121,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="battleshiphit.jpg" />
+    <None Include="menubackground.jpg" />
     <Content Include="MyTemplate.vstemplate" />
     <Content Include="__TemplateIcon.ico" />
   </ItemGroup>
