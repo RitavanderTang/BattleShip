@@ -83,9 +83,29 @@ namespace Battleship.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap battleshiphit {
+            get {
+                object obj = ResourceManager.GetObject("battleshiphit", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fireIcon {
             get {
                 object obj = ResourceManager.GetObject("fireIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap menubackground {
+            get {
+                object obj = ResourceManager.GetObject("menubackground", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

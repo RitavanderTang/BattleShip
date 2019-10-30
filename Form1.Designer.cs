@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.playerScore = new System.Windows.Forms.Label();
             this.enemyScore = new System.Windows.Forms.Label();
-            this.enemyMoves = new System.Windows.Forms.Label();
             this.roundsText = new System.Windows.Forms.Label();
             this.helpText = new System.Windows.Forms.Label();
             this.w1 = new System.Windows.Forms.Button();
@@ -73,6 +72,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.labelEnemy = new System.Windows.Forms.Label();
+            this.labelPlayer = new System.Windows.Forms.Label();
+            this.blinkLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // playerScore
@@ -95,18 +97,6 @@
             this.enemyScore.TabIndex = 1;
             this.enemyScore.Text = "00";
             // 
-            // enemyMoves
-            // 
-            this.enemyMoves.AutoSize = true;
-            this.enemyMoves.BackColor = System.Drawing.Color.Transparent;
-            this.enemyMoves.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.enemyMoves.ForeColor = System.Drawing.Color.White;
-            this.enemyMoves.Location = new System.Drawing.Point(901, 46);
-            this.enemyMoves.Name = "enemyMoves";
-            this.enemyMoves.Size = new System.Drawing.Size(41, 26);
-            this.enemyMoves.TabIndex = 2;
-            this.enemyMoves.Text = "A1";
-            // 
             // roundsText
             // 
             this.roundsText.AutoSize = true;
@@ -127,13 +117,14 @@
             this.helpText.ForeColor = System.Drawing.Color.Transparent;
             this.helpText.Location = new System.Drawing.Point(95, 543);
             this.helpText.Name = "helpText";
-            this.helpText.Size = new System.Drawing.Size(373, 15);
+            this.helpText.Size = new System.Drawing.Size(223, 15);
             this.helpText.TabIndex = 4;
-            this.helpText.Text = "1) Click on 3 Different Buttons Above to Place Your Ships.";
+            this.helpText.Text = "Player 1: Time to place your ships";
             // 
             // w1
             // 
-            this.w1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.w1.BackColor = System.Drawing.SystemColors.Control;
+            this.w1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.w1.Location = new System.Drawing.Point(107, 228);
             this.w1.Name = "w1";
             this.w1.Size = new System.Drawing.Size(75, 55);
@@ -144,6 +135,7 @@
             // 
             // w3
             // 
+            this.w3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.w3.Location = new System.Drawing.Point(294, 228);
             this.w3.Name = "w3";
             this.w3.Size = new System.Drawing.Size(75, 55);
@@ -154,6 +146,7 @@
             // 
             // w2
             // 
+            this.w2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.w2.Location = new System.Drawing.Point(204, 228);
             this.w2.Name = "w2";
             this.w2.Size = new System.Drawing.Size(75, 55);
@@ -175,6 +168,7 @@
             // 
             // y3
             // 
+            this.y3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.y3.Location = new System.Drawing.Point(294, 384);
             this.y3.Name = "y3";
             this.y3.Size = new System.Drawing.Size(75, 55);
@@ -185,6 +179,7 @@
             // 
             // y2
             // 
+            this.y2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.y2.Location = new System.Drawing.Point(204, 384);
             this.y2.Name = "y2";
             this.y2.Size = new System.Drawing.Size(75, 55);
@@ -195,6 +190,7 @@
             // 
             // y1
             // 
+            this.y1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.y1.Location = new System.Drawing.Point(107, 384);
             this.y1.Name = "y1";
             this.y1.Size = new System.Drawing.Size(75, 55);
@@ -205,6 +201,7 @@
             // 
             // x4
             // 
+            this.x4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.x4.Location = new System.Drawing.Point(386, 305);
             this.x4.Name = "x4";
             this.x4.Size = new System.Drawing.Size(75, 55);
@@ -215,6 +212,7 @@
             // 
             // x3
             // 
+            this.x3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.x3.Location = new System.Drawing.Point(294, 305);
             this.x3.Name = "x3";
             this.x3.Size = new System.Drawing.Size(75, 55);
@@ -225,6 +223,7 @@
             // 
             // x2
             // 
+            this.x2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.x2.Location = new System.Drawing.Point(204, 305);
             this.x2.Name = "x2";
             this.x2.Size = new System.Drawing.Size(75, 55);
@@ -235,6 +234,7 @@
             // 
             // x1
             // 
+            this.x1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.x1.Location = new System.Drawing.Point(107, 305);
             this.x1.Name = "x1";
             this.x1.Size = new System.Drawing.Size(75, 55);
@@ -245,6 +245,7 @@
             // 
             // z4
             // 
+            this.z4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.z4.Location = new System.Drawing.Point(386, 458);
             this.z4.Name = "z4";
             this.z4.Size = new System.Drawing.Size(75, 55);
@@ -255,6 +256,7 @@
             // 
             // z3
             // 
+            this.z3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.z3.Location = new System.Drawing.Point(294, 458);
             this.z3.Name = "z3";
             this.z3.Size = new System.Drawing.Size(75, 55);
@@ -265,6 +267,7 @@
             // 
             // z2
             // 
+            this.z2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.z2.Location = new System.Drawing.Point(204, 458);
             this.z2.Name = "z2";
             this.z2.Size = new System.Drawing.Size(75, 55);
@@ -275,6 +278,7 @@
             // 
             // z1
             // 
+            this.z1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.z1.Location = new System.Drawing.Point(107, 458);
             this.z1.Name = "z1";
             this.z1.Size = new System.Drawing.Size(75, 55);
@@ -285,6 +289,7 @@
             // 
             // y4
             // 
+            this.y4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.y4.Location = new System.Drawing.Point(386, 384);
             this.y4.Name = "y4";
             this.y4.Size = new System.Drawing.Size(75, 55);
@@ -295,6 +300,7 @@
             // 
             // a1
             // 
+            this.a1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.a1.Location = new System.Drawing.Point(605, 228);
             this.a1.Name = "a1";
             this.a1.Size = new System.Drawing.Size(75, 55);
@@ -305,6 +311,7 @@
             // 
             // b1
             // 
+            this.b1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.b1.Location = new System.Drawing.Point(605, 305);
             this.b1.Name = "b1";
             this.b1.Size = new System.Drawing.Size(75, 55);
@@ -315,6 +322,7 @@
             // 
             // d4
             // 
+            this.d4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.d4.Location = new System.Drawing.Point(879, 458);
             this.d4.Name = "d4";
             this.d4.Size = new System.Drawing.Size(75, 55);
@@ -325,6 +333,7 @@
             // 
             // d3
             // 
+            this.d3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.d3.Location = new System.Drawing.Point(790, 458);
             this.d3.Name = "d3";
             this.d3.Size = new System.Drawing.Size(75, 55);
@@ -335,6 +344,7 @@
             // 
             // d2
             // 
+            this.d2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.d2.Location = new System.Drawing.Point(697, 458);
             this.d2.Name = "d2";
             this.d2.Size = new System.Drawing.Size(75, 55);
@@ -345,6 +355,7 @@
             // 
             // d1
             // 
+            this.d1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.d1.Location = new System.Drawing.Point(605, 458);
             this.d1.Name = "d1";
             this.d1.Size = new System.Drawing.Size(75, 55);
@@ -355,6 +366,7 @@
             // 
             // c4
             // 
+            this.c4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.c4.Location = new System.Drawing.Point(879, 382);
             this.c4.Name = "c4";
             this.c4.Size = new System.Drawing.Size(75, 55);
@@ -365,6 +377,7 @@
             // 
             // c3
             // 
+            this.c3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.c3.Location = new System.Drawing.Point(790, 382);
             this.c3.Name = "c3";
             this.c3.Size = new System.Drawing.Size(75, 55);
@@ -375,6 +388,7 @@
             // 
             // c2
             // 
+            this.c2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.c2.Location = new System.Drawing.Point(697, 384);
             this.c2.Name = "c2";
             this.c2.Size = new System.Drawing.Size(75, 55);
@@ -385,6 +399,7 @@
             // 
             // c1
             // 
+            this.c1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.c1.Location = new System.Drawing.Point(605, 382);
             this.c1.Name = "c1";
             this.c1.Size = new System.Drawing.Size(75, 55);
@@ -395,6 +410,7 @@
             // 
             // b4
             // 
+            this.b4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.b4.Location = new System.Drawing.Point(879, 305);
             this.b4.Name = "b4";
             this.b4.Size = new System.Drawing.Size(75, 55);
@@ -405,6 +421,7 @@
             // 
             // b3
             // 
+            this.b3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.b3.Location = new System.Drawing.Point(790, 305);
             this.b3.Name = "b3";
             this.b3.Size = new System.Drawing.Size(75, 55);
@@ -415,6 +432,7 @@
             // 
             // b2
             // 
+            this.b2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.b2.Location = new System.Drawing.Point(697, 305);
             this.b2.Name = "b2";
             this.b2.Size = new System.Drawing.Size(75, 55);
@@ -425,6 +443,7 @@
             // 
             // a4
             // 
+            this.a4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.a4.Location = new System.Drawing.Point(879, 228);
             this.a4.Name = "a4";
             this.a4.Size = new System.Drawing.Size(75, 55);
@@ -435,6 +454,7 @@
             // 
             // a3
             // 
+            this.a3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.a3.Location = new System.Drawing.Point(790, 228);
             this.a3.Name = "a3";
             this.a3.Size = new System.Drawing.Size(75, 55);
@@ -445,6 +465,7 @@
             // 
             // a2
             // 
+            this.a2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.a2.Location = new System.Drawing.Point(697, 228);
             this.a2.Name = "a2";
             this.a2.Size = new System.Drawing.Size(75, 55);
@@ -512,6 +533,39 @@
             this.label4.TabIndex = 42;
             this.label4.Text = "Score:";
             // 
+            // labelEnemy
+            // 
+            this.labelEnemy.AutoSize = true;
+            this.labelEnemy.BackColor = System.Drawing.Color.Transparent;
+            this.labelEnemy.Font = new System.Drawing.Font("Microsoft Sans Serif", 50F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEnemy.ForeColor = System.Drawing.Color.Red;
+            this.labelEnemy.Location = new System.Drawing.Point(612, 117);
+            this.labelEnemy.Name = "labelEnemy";
+            this.labelEnemy.Size = new System.Drawing.Size(0, 76);
+            this.labelEnemy.TabIndex = 46;
+            // 
+            // labelPlayer
+            // 
+            this.labelPlayer.AutoSize = true;
+            this.labelPlayer.BackColor = System.Drawing.Color.Transparent;
+            this.labelPlayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 50F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPlayer.ForeColor = System.Drawing.Color.Red;
+            this.labelPlayer.Location = new System.Drawing.Point(281, 117);
+            this.labelPlayer.Name = "labelPlayer";
+            this.labelPlayer.Size = new System.Drawing.Size(0, 76);
+            this.labelPlayer.TabIndex = 45;
+            // 
+            // blinkLabel
+            // 
+            this.blinkLabel.AutoSize = true;
+            this.blinkLabel.BackColor = System.Drawing.Color.Transparent;
+            this.blinkLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.blinkLabel.ForeColor = System.Drawing.Color.Red;
+            this.blinkLabel.Location = new System.Drawing.Point(246, 190);
+            this.blinkLabel.Name = "blinkLabel";
+            this.blinkLabel.Size = new System.Drawing.Size(0, 63);
+            this.blinkLabel.TabIndex = 43;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -520,6 +574,9 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1065, 585);
+            this.Controls.Add(this.labelEnemy);
+            this.Controls.Add(this.labelPlayer);
+            this.Controls.Add(this.blinkLabel);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -558,7 +615,6 @@
             this.Controls.Add(this.w1);
             this.Controls.Add(this.helpText);
             this.Controls.Add(this.roundsText);
-            this.Controls.Add(this.enemyMoves);
             this.Controls.Add(this.enemyScore);
             this.Controls.Add(this.playerScore);
             this.Name = "Form1";
@@ -571,7 +627,6 @@
 
         private System.Windows.Forms.Label playerScore;
         private System.Windows.Forms.Label enemyScore;
-        private System.Windows.Forms.Label enemyMoves;
         private System.Windows.Forms.Label roundsText;
         private System.Windows.Forms.Label helpText;
         private System.Windows.Forms.Button w1;
@@ -612,6 +667,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label labelEnemy;
+        private System.Windows.Forms.Label labelPlayer;
+        private System.Windows.Forms.Label blinkLabel;
     }
 }
 
