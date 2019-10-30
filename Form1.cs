@@ -90,6 +90,8 @@ namespace Battleship
 
         private void attackEnemyPosition(object sender, EventArgs e)
         {
+            // Clears the HIT! label
+            labelPlayer.Text = "";
             // Define clicked button as variable 'button'.
             // Search for the index of the button in the player2Position list.
             var button = sender as Button;
@@ -102,12 +104,13 @@ namespace Battleship
                 rounds--;
                 roundsText.Text = "Rounds: " + rounds;
 
-                // If clicked button has tag ship. Button is disabeld.
-                // Button background is fireIcon and blue color.
+                // If clicked button has tag ship, display HIT!
+                // Button is disabeld, background fireIcon and blue color.
                 // Backgroundimage gets tag 'hit'.
                 // Score P1 +1 and is displayed.
                 if ((string)enemyPosition[index].Tag == "enemyShip")
                 {
+                    labelEnemy.Text = "HIT!";
                     enemyPosition[index].Enabled = false;
                     enemyPosition[index].BackgroundImage = Properties.Resources.fireIcon;
                     enemyPosition[index].BackColor = System.Drawing.Color.DarkBlue;
@@ -124,7 +127,7 @@ namespace Battleship
                     enemyPosition[index].Enabled = false;
                     enemyPosition[index].BackgroundImage = Properties.Resources.missIcon;
                     enemyPosition[index].BackColor = System.Drawing.Color.DarkBlue;
-                    enemyPlayTimer.Start();
+                    enemyPlayTimer.Start();     
                 }
 
                 // Comp buttons disabled for Comp to attack P.
@@ -136,6 +139,7 @@ namespace Battleship
         // Executed when enemyPlayTimer starts.
         private void enemyAttackPlayer(object sender, EventArgs e)
         {
+            labelEnemy.Text = "";
             if (playerPosition.Count > 0 && rounds > 0)
             {
                 rounds--;
@@ -145,6 +149,7 @@ namespace Battleship
 
                 if ((string)playerPosition[index].Tag == "playerShip")
                 {
+                    labelPlayer.Text = "HIT!";
                     playerPosition[index].BackgroundImage = Properties.Resources.fireIcon;
                     playerPosition[index].Enabled = false;
                     playerPosition[index].BackColor = System.Drawing.Color.DarkBlue;
@@ -171,8 +176,11 @@ namespace Battleship
             // When rounds = 0, or P1 has 3 pnts, or P2 has 3 pnts:
             // Ships are displayed when not hit.
             // Hit ships are displayed when hit.
-            if (rounds < 1 || playerTotalScore > 2 || enemyTotalScore > 2)
+            
+            
+            if (rounds < 1 || playerTotalScore == 3 || enemyTotalScore == 3)
             {
+                /*
                 for (int i = 0; i < 16; i++)
                 {
                     if ((string)playerPosition[i].Tag == "playerShip" && playerPosition[i].BackgroundImage == null)
@@ -187,7 +195,7 @@ namespace Battleship
                     if (enemyPosition[i].BackgroundImage != null && (string)enemyPosition[i].BackgroundImage.Tag == "hit")
                         enemyPosition[i].BackgroundImage = Properties.Resources.battleshiphit;
                 }
-
+                */
                 // Messagebox displayed with message dependent of winner.
                 if (playerTotalScore > enemyTotalScore)
                     MessageBox.Show("You win!", "winning");

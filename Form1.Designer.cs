@@ -72,6 +72,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.labelEnemy = new System.Windows.Forms.Label();
+            this.labelPlayer = new System.Windows.Forms.Label();
+            this.blinkLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // playerScore
@@ -530,6 +533,39 @@
             this.label4.TabIndex = 42;
             this.label4.Text = "Score:";
             // 
+            // labelEnemy
+            // 
+            this.labelEnemy.AutoSize = true;
+            this.labelEnemy.BackColor = System.Drawing.Color.Transparent;
+            this.labelEnemy.Font = new System.Drawing.Font("Microsoft Sans Serif", 50F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEnemy.ForeColor = System.Drawing.Color.Red;
+            this.labelEnemy.Location = new System.Drawing.Point(612, 117);
+            this.labelEnemy.Name = "labelEnemy";
+            this.labelEnemy.Size = new System.Drawing.Size(0, 76);
+            this.labelEnemy.TabIndex = 46;
+            // 
+            // labelPlayer
+            // 
+            this.labelPlayer.AutoSize = true;
+            this.labelPlayer.BackColor = System.Drawing.Color.Transparent;
+            this.labelPlayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 50F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPlayer.ForeColor = System.Drawing.Color.Red;
+            this.labelPlayer.Location = new System.Drawing.Point(281, 117);
+            this.labelPlayer.Name = "labelPlayer";
+            this.labelPlayer.Size = new System.Drawing.Size(0, 76);
+            this.labelPlayer.TabIndex = 45;
+            // 
+            // blinkLabel
+            // 
+            this.blinkLabel.AutoSize = true;
+            this.blinkLabel.BackColor = System.Drawing.Color.Transparent;
+            this.blinkLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.blinkLabel.ForeColor = System.Drawing.Color.Red;
+            this.blinkLabel.Location = new System.Drawing.Point(246, 190);
+            this.blinkLabel.Name = "blinkLabel";
+            this.blinkLabel.Size = new System.Drawing.Size(0, 63);
+            this.blinkLabel.TabIndex = 43;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -538,6 +574,9 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1065, 585);
+            this.Controls.Add(this.labelEnemy);
+            this.Controls.Add(this.labelPlayer);
+            this.Controls.Add(this.blinkLabel);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -628,6 +667,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label labelEnemy;
+        private System.Windows.Forms.Label labelPlayer;
+        private System.Windows.Forms.Label blinkLabel;
     }
 }
 

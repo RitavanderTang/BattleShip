@@ -95,6 +95,8 @@ namespace Battleship
 
         private void player1Attack2(object sender, EventArgs e)
         {
+            // Clears the HIT! label
+            labelP1.Text = "";
             // Define clicked button as variable 'button'.
             // Search for the index of the button in the player2Position list.
             var button = sender as Button;
@@ -107,19 +109,19 @@ namespace Battleship
                 rounds--;
                 roundsText.Text = "Rounds: " + rounds;
 
-                // If clicked button has tag ship. Button is disabeld.
-                // Button background is fireIcon and blue color.
+                // If clicked button has tag ship, display HIT!.
+                // Button is disabled, background fireIcon and blue color.
                 // Backgroundimage gets tag 'hit'.
                 // Score P1 +1 and is displayed.
                 if ((string)player2Position[index].Tag == "player2Ship")
                 {
+                    labelP2.Text = "HIT!";
                     player2Position[index].Enabled = false;
                     player2Position[index].BackgroundImage = Properties.Resources.fireIcon;
                     player2Position[index].BackColor = System.Drawing.Color.DarkBlue;
                     player2Position[index].BackgroundImage.Tag = "hit";
                     player1TotalScore++;
                     player1Score.Text = "" + player1TotalScore;
-
                 }
                 // If clicked button doesn't have tag, button is disabled.
                 // Button background is miss Icon and blue color.
@@ -128,7 +130,6 @@ namespace Battleship
                     player2Position[index].Enabled = false;
                     player2Position[index].BackgroundImage = Properties.Resources.missIcon;
                     player2Position[index].BackColor = System.Drawing.Color.DarkBlue;
-
                 }
                 // P2 buttons disabled, P1 buttons enabled for P2 to attack P1.
                 for (int i = 0; i < 16; i++)
@@ -147,6 +148,8 @@ namespace Battleship
         // Same as player1Attack2.
         private void player2Attack1(object sender, EventArgs e)
         {
+
+            labelP2.Text = "";
             var button = sender as Button;
             int index = player1Position.IndexOf(button);
 
@@ -157,6 +160,7 @@ namespace Battleship
 
                 if ((string)player1Position[index].Tag == "player1Ship")
                 {
+                    labelP1.Text = "HIT!";
                     player1Position[index].Enabled = false;
                     player1Position[index].BackgroundImage = Properties.Resources.fireIcon;
                     player1Position[index].BackColor = System.Drawing.Color.DarkBlue;

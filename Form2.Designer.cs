@@ -70,6 +70,8 @@
             this.doneButton1 = new System.Windows.Forms.Button();
             this.doneButton2 = new System.Windows.Forms.Button();
             this.helpText = new System.Windows.Forms.Label();
+            this.labelP1 = new System.Windows.Forms.Label();
+            this.labelP2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label4
@@ -537,6 +539,28 @@
             this.helpText.TabIndex = 47;
             this.helpText.Text = "Player 1: Time to place your ships";
             // 
+            // labelP1
+            // 
+            this.labelP1.AutoSize = true;
+            this.labelP1.BackColor = System.Drawing.Color.Transparent;
+            this.labelP1.Font = new System.Drawing.Font("Microsoft Sans Serif", 50F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelP1.ForeColor = System.Drawing.Color.Red;
+            this.labelP1.Location = new System.Drawing.Point(289, 107);
+            this.labelP1.Name = "labelP1";
+            this.labelP1.Size = new System.Drawing.Size(0, 76);
+            this.labelP1.TabIndex = 86;
+            // 
+            // labelP2
+            // 
+            this.labelP2.AutoSize = true;
+            this.labelP2.BackColor = System.Drawing.Color.Transparent;
+            this.labelP2.Font = new System.Drawing.Font("Microsoft Sans Serif", 50F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelP2.ForeColor = System.Drawing.Color.Red;
+            this.labelP2.Location = new System.Drawing.Point(641, 107);
+            this.labelP2.Name = "labelP2";
+            this.labelP2.Size = new System.Drawing.Size(0, 76);
+            this.labelP2.TabIndex = 87;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -544,6 +568,8 @@
             this.BackgroundImage = global::Battleship.Properties.Resources.radarbackground;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1065, 585);
+            this.Controls.Add(this.labelP2);
+            this.Controls.Add(this.labelP1);
             this.Controls.Add(this.doneButton2);
             this.Controls.Add(this.doneButton1);
             this.Controls.Add(this.label4);
@@ -636,5 +662,7 @@
         private System.Windows.Forms.Button doneButton1;
         private System.Windows.Forms.Button doneButton2;
         private System.Windows.Forms.Label helpText;
+        private System.Windows.Forms.Label labelP1;
+        private System.Windows.Forms.Label labelP2;
     }
 }
