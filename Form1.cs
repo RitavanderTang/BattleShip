@@ -6,7 +6,6 @@ using System.Diagnostics;
 
 namespace Battleship
 {
-   
     public partial class Form1 : Form
     {
         // Define the variables used.
@@ -82,7 +81,6 @@ namespace Battleship
             // If button is not empty, retrieve another random index.
             else
                 index = rand.Next(enemyPosition.Count);
-
             // When Comp has 0 ships to place, timer stops.
             if (totalEnemy < 1)
                 enemyPositionPicker.Stop();
@@ -205,6 +203,13 @@ namespace Battleship
 
                 if (enemyTotalScore > playerTotalScore)
                     MessageBox.Show("Haha! I sunk your battle ships", "Lost");
+
+                string btnClicked = MyMessageBox.ShowBox("Do you want to restart or exit the game?", "End");
+
+                if (btnClicked == "1")
+                {
+                    this.Close();
+                }
             }
         }
     }

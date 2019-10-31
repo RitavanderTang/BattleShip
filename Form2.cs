@@ -185,8 +185,7 @@ namespace Battleship
                 helpText.Left = 112;
                 helpText.Text = "Player 1: your turn to attack Player 2";
             }
-
-                       
+          
             // When rounds = 0, or P1 has 3 pnts, or P2 has 3 pnts:
             // Ships are displayed when not hit.
             // Hit ships are displayed when hit.
@@ -213,9 +212,16 @@ namespace Battleship
            
                 if (player1TotalScore == player2TotalScore)
                     MessageBox.Show("No one wins this", "Draw");
-               
+
                 if (player2TotalScore > player1TotalScore)
                     MessageBox.Show("Player 2 wins the battle!", "Congrats player 2");
+
+                string btnClicked = MyMessageBox.ShowBox("Do you want to restart or exit the game?", "End");
+
+                if (btnClicked == "1")
+                {
+                    this.Close();
+                }
             }
         }
 
@@ -267,7 +273,6 @@ namespace Battleship
                 player1Position[i].Click += new EventHandler(player2Attack1);
             }
 
-            
         }
     }
 }
